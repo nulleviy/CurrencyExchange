@@ -1,6 +1,8 @@
 package by.nulleviy.entity.exception;
 
-public class CustomException extends Exception {
+import java.io.IOException;
+
+public class CustomException extends IOException {
     public CustomException(String message){
         super(message);
     }

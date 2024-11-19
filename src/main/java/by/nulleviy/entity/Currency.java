@@ -4,12 +4,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Value;
+
 @Getter
 @NoArgsConstructor(force = true)
 @Value
 @Builder
 public class Currency {
-    int id;
+    Integer id;
     String code;
     String fullName;
     String sign;

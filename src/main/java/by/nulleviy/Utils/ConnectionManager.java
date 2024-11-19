@@ -65,6 +65,10 @@ public class ConnectionManager {
                     "12345"
             );
         } catch (SQLException e) {
+
+
+
+
             throw new RuntimeException(e);
         }
     }
