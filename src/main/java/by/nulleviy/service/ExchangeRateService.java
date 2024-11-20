@@ -55,7 +55,7 @@ public class ExchangeRateService {
         BigDecimal amount = new BigDecimal(amountParam);
         BigDecimal firstRate = exchangeRateDao.findByCodes(dollar.getCode(),baseCurrencyCode).getRate();
         BigDecimal secondRate = exchangeRateDao.findByCodes(dollar.getCode(),targetCurrencyCode).getRate();
-        BigDecimal crossRate = firstRate.divide(secondRate,MathContext.DECIMAL64);
+        BigDecimal crossRate = secondRate.divide(firstRate,MathContext.DECIMAL64);
         BigDecimal convertedAmount = amount.multiply(crossRate);
 
         ExchangeRate exchangeRate = new ExchangeRate(0,currencyDao.findByCode(baseCurrencyCode),currencyDao.findByCode(targetCurrencyCode),crossRate);

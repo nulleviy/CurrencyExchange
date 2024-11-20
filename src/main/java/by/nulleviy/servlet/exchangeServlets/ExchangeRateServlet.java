@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/exchangeRates/*")
+@WebServlet("/exchange_rates/*")
 public class ExchangeRateServlet extends HttpServlet {
     private final ObjectMapper mapper = new ObjectMapper();
     private final ExchangeRateService exchangeRateService = new ExchangeRateService();
@@ -32,7 +32,7 @@ public class ExchangeRateServlet extends HttpServlet {
             mapper.writeValue(resp.getWriter(),new ErrorResponse(resp.getStatus(),"Коды валют пары отсутствуют в адресе"));
         }
         try{
-            mapper.writeValue(resp.getWriter(),exchangeRateService.findByCodes(firstPart,secondPart));
+            mapper.writeValue(resp.getWriter(),exchangeRateService.findByCodes(firstPart,secondPart).get());
         }catch(CustomException e){
             resp.setStatus(500);
             mapper.writeValue(resp.getWriter(),new CustomException("Что-то не так с гетом"));

@@ -1,12 +1,10 @@
 package by.nulleviy.servlet.currencyServlets;
 
 import by.nulleviy.dto.CurrencyDto;
-import by.nulleviy.entity.Currency;
 import by.nulleviy.entity.exception.CustomException;
 import by.nulleviy.entity.exception.ErrorResponse;
 import by.nulleviy.service.CurrencyService;
 
-import java.sql.SQLException;
 import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,8 +13,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.SneakyThrows;
-import org.postgresql.util.PSQLException;
 
 import java.io.IOException;
 
